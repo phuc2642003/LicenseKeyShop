@@ -21,8 +21,6 @@ public partial class User
 
     public bool IsActive { get; set; }
 
-    public virtual ICollection<BalanceHistory> BalanceHistories { get; set; } = new List<BalanceHistory>();
-
     public virtual Cart? Cart { get; set; }
 
     public virtual ICollection<DepositHistory> DepositHistories { get; set; } = new List<DepositHistory>();

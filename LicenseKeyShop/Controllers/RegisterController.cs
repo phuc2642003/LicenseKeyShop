@@ -2,7 +2,7 @@
 using LicenseKeyShop.Ultis;
 using LicenseKeyShop.Models;
 
-namespace License_Key_Shop_Web.Controllers
+namespace LicenseKeyShop.Controllers
 {
     public class RegisterController : Controller
     {

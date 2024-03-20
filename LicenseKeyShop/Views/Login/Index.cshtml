@@ -1,4 +1,8 @@
 ﻿@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
+@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Pages/Shared/_LayoutCustomer.cshtml";
+}
 
 
 <!-- Login Start -->
@@ -34,7 +38,6 @@
                         </div>
                         <div class="col-12">
                             <button class="btn btn-success w-100 py-3" type="submit">Login</button>
-                            <a href="/ForgotPassword" style="float: right; font-style:italic; text-decoration: none; margin-top: 10px; color: #198754">Forgot password?</a>
                         </div>
                         <div class="col-12 text-center">
                             <label>Or</label>

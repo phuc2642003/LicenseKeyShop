@@ -20,7 +20,6 @@ public partial class Prn211He176850Context : DbContext
     {
     }
 
-    public virtual DbSet<BalanceHistory> BalanceHistories { get; set; }
 
     public virtual DbSet<Cart> Carts { get; set; }
 
@@ -50,27 +49,7 @@ public partial class Prn211He176850Context : DbContext
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
-        modelBuilder.Entity<BalanceHistory>(entity =>
-        {
-            entity.HasKey(e => e.Id).HasName("BalanceHistory_HE173252_pk");
-
-            entity.ToTable("BalanceHistory");
-
-            entity.Property(e => e.Id).HasColumnName("ID");
-            entity.Property(e => e.ChangeDate).HasColumnType("datetime");
-            entity.Property(e => e.Reason)
-                .HasMaxLength(100)
-                .IsUnicode(false);
-            entity.Property(e => e.UserUsername)
-                .HasMaxLength(25)
-                .IsUnicode(false)
-                .HasColumnName("User_Username");
-
-            entity.HasOne(d => d.UserUsernameNavigation).WithMany(p => p.BalanceHistories)
-                .HasForeignKey(d => d.UserUsername)
-                .OnDelete(DeleteBehavior.ClientSetNull)
-                .HasConstraintName("BalanceHistory_HE173252_User_HE173252");
-        });
+        
 
         modelBuilder.Entity<Cart>(entity =>
         {

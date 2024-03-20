@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9CqmdwB58/Zf1gfwdy/95TOuL3vqU3lpOzDF439x/ZARd2aXZOd0DHIpMWbyF+QPpXDZ2Ihso/VXq+mI9Q+6/A==",
+  "dgSpecHash": "2CBRtPTupnpcRqLbdczs4cXjA0mJ7dD0i98oeN0XaEi1jTtSFooIx8moiyuSNpmU4l5Gw+TF9GS9ejK8LCXY5A==",
   "success": true,
-  "projectFilePath": "E:\\PRNTest\\LicenseKeyShop\\LicenseKeyShop.csproj",
+  "projectFilePath": "E:\\GitHub\\LicenseKeyShop\\LicenseKeyShop\\LicenseKeyShop.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\phuc2\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\phuc2\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

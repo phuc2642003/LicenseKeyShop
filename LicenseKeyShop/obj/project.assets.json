@@ -2943,11 +2943,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "E:\\PRNTest\\LicenseKeyShop\\LicenseKeyShop.csproj",
+      "projectUniqueName": "E:\\GitHub\\LicenseKeyShop\\LicenseKeyShop\\LicenseKeyShop.csproj",
       "projectName": "LicenseKeyShop",
-      "projectPath": "E:\\PRNTest\\LicenseKeyShop\\LicenseKeyShop.csproj",
+      "projectPath": "E:\\GitHub\\LicenseKeyShop\\LicenseKeyShop\\LicenseKeyShop.csproj",
       "packagesPath": "C:\\Users\\phuc2\\.nuget\\packages\\",
-      "outputPath": "E:\\PRNTest\\LicenseKeyShop\\obj\\",
+      "outputPath": "E:\\GitHub\\LicenseKeyShop\\LicenseKeyShop\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
