@@ -1,5 +1,6 @@
 ﻿using LicenseKeyShop.Models;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using System.Linq;
 
 namespace License_Key_Shop_Web.Controllers
@@ -136,6 +137,53 @@ namespace License_Key_Shop_Web.Controllers
             {
                 return RedirectToAction("Index", "Login");
             }
+        }
+
+        public IActionResult PlaceOrder()
+        {
+            bool canAccess = CanAccessThisAdminPage();
+            if (canAccess)
+            {
+                string? useAcc = HttpContext.Session.GetString("userAcc");
+                var userInf = Prn211He176850Context.INSTANCE.Users.Find(useAcc);
+                if (userInf != null)
+                {
+                    var cartTotalOfCus= Prn211He176850Context.INSTANCE.Carts.Find(useAcc);
+                    var userBalance = Prn211He176850Context.INSTANCE.UserBalances.Find(useAcc);
+                    if (cartTotalOfCus != null)
+                    {
+                        if (cartTotalOfCus.Total > userBalance.Amount)
+                        {
+                            return RedirectToAction("Index", "Cart");
+                        }
+                        else
+                        {
+                            //
+                            cartTotalOfCus.Total = 0;
+                            Prn211He176850Context.INSTANCE.Carts.Update(cartTotalOfCus);
+                            Prn211He176850Context.INSTANCE.SaveChanges();
+                            //
+                            var cartItems = Prn211He176850Context.INSTANCE.CartItems;
+                            Prn211He176850Context.INSTANCE.CartItems.RemoveRange(cartItems);
+                            Prn211He176850Context.INSTANCE.SaveChanges();
+                            //
+                            userBalance.Amount -= cartTotalOfCus.Total;
+                            Prn211He176850Context.INSTANCE.UserBalances.Update(userBalance);
+                            Prn211He176850Context.INSTANCE.SaveChanges();  
+                        }
+                    }
+                    else
+                    {
+                        return RedirectToAction("Index", "Home");
+                    }
+                }
+                
+            }
+            else
+            {
+                return RedirectToAction("Index", "Login");
+            }
+            return View();
         }
 
     }
