@@ -174,3 +174,4 @@ E:\GitHub\LicenseKeyShop\LicenseKeyShop\obj\Debug\net6.0\LicenseKeyShop.pdb
 E:\GitHub\LicenseKeyShop\LicenseKeyShop\obj\Debug\net6.0\LicenseKeyShop.genruntimeconfig.cache
 E:\GitHub\LicenseKeyShop\LicenseKeyShop\obj\Debug\net6.0\ref\LicenseKeyShop.dll
 E:\GitHub\LicenseKeyShop\LicenseKeyShop\obj\Debug\net6.0\scopedcss\Pages\Shared\_LayoutCustomer.cshtml.rz.scp.css
+E:\GitHub\LicenseKeyShop\LicenseKeyShop\obj\Debug\net6.0\scopedcss\Pages\Shared\_LayoutAdminn.cshtml.rz.scp.css

@@ -149,7 +149,7 @@ namespace License_Key_Shop_Web.Controllers
                 if (userInf != null)
                 {
                     var cartTotalOfCus= Prn211He176850Context.INSTANCE.Carts.Find(useAcc);
-                    var userBalance = Prn211He176850Context.INSTANCE.UserBalances.Find(useAcc);
+                    var userBalance = Prn211He176850Context.INSTANCE.UserBalances.FirstOrDefault(ub => ub.UserUsername == useAcc);
                     if (cartTotalOfCus != null)
                     {
                         if (cartTotalOfCus.Total > userBalance.Amount)
@@ -158,18 +158,49 @@ namespace License_Key_Shop_Web.Controllers
                         }
                         else
                         {
+                            var cartItems = Prn211He176850Context.INSTANCE.CartItems.Where(cart => cart.UserUsername==useAcc).ToList();
+                            if(cartItems !=null)
+                            {
+                                OrderHistory orderHistory = new OrderHistory
+                                {
+                                    UserUsername = useAcc
+                                };
+                                Prn211He176850Context.INSTANCE.OrderHistories.Add(orderHistory);
+                                Prn211He176850Context.INSTANCE.SaveChanges();
+                                var lastOrderHistory = Prn211He176850Context.INSTANCE.OrderHistories.Where(ord => ord.UserUsername.Equals(useAcc))
+                                .OrderByDescending(x => x.OrderId).FirstOrDefault();
+                                foreach (CartItem item in cartItems)
+                                {
+                                    var prdKey = Prn211He176850Context.INSTANCE.ProductKeys
+                                    .Where(prdK => prdK.ProductProductId == item.ProductProduct.ProductId && prdK.IsExpired == false)
+                                    .Take(item.Quantity);
+                                    if(prdKey != null)
+                                    {
+                                        foreach (var k in prdKey)
+                                        {
+                                            OrderDetail orderDetail = new OrderDetail()
+                                            {
+                                                ProductSoldName = k.ProductProduct.ProductName,
+                                                OrderHistoryOrderId = lastOrderHistory.OrderId,
+                                                ProductKey = k.ProductKey1,
+                                                ExpirationDate = k.ExpirationDate,
+                                            };
+                                            Prn211He176850Context.INSTANCE.OrderDetails.Add(orderDetail);
+                                        }    
+
+                                    }    
+                                }    
+                            }
+                            userBalance.Amount -= cartTotalOfCus.Total;
+                            Prn211He176850Context.INSTANCE.UserBalances.Update(userBalance);
+                            Prn211He176850Context.INSTANCE.SaveChanges();
                             //
                             cartTotalOfCus.Total = 0;
                             Prn211He176850Context.INSTANCE.Carts.Update(cartTotalOfCus);
                             Prn211He176850Context.INSTANCE.SaveChanges();
                             //
-                            var cartItems = Prn211He176850Context.INSTANCE.CartItems;
                             Prn211He176850Context.INSTANCE.CartItems.RemoveRange(cartItems);
                             Prn211He176850Context.INSTANCE.SaveChanges();
-                            //
-                            userBalance.Amount -= cartTotalOfCus.Total;
-                            Prn211He176850Context.INSTANCE.UserBalances.Update(userBalance);
-                            Prn211He176850Context.INSTANCE.SaveChanges();  
                         }
                     }
                     else

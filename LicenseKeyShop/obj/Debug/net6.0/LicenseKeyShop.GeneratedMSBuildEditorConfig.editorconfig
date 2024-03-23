@@ -52,6 +52,10 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ2FydFxQbGFjZU9yZGVyLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[E:/GitHub/LicenseKeyShop/LicenseKeyShop/Views/DepositManagement/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdE1hbmFnZW1lbnRcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [E:/GitHub/LicenseKeyShop/LicenseKeyShop/Views/Deposit/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRGVwb3NpdFxJbmRleC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -83,6 +87,10 @@ build_metadata.AdditionalFiles.CssScope =
 [E:/GitHub/LicenseKeyShop/LicenseKeyShop/Views/Register/Index.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUmVnaXN0ZXJcSW5kZXguY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
+
+[E:/GitHub/LicenseKeyShop/LicenseKeyShop/Pages/Shared/_LayoutAdminn.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXRBZG1pbm4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-7as29dja0c
 
 [E:/GitHub/LicenseKeyShop/LicenseKeyShop/Pages/Shared/_LayoutCustomer.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXRDdXN0b21lci5jc2h0bWw=
